@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btgb3ge2g4158"]
+
+[ext_resource type="Script" path="res://random_hexes.gd" id="1_l5l12"]
+
+[node name="RandomHexes" type="Node2D"]
+script = ExtResource("1_l5l12")

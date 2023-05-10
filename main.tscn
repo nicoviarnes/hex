@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyncqvduph3yy"]
+
+[ext_resource type="PackedScene" uid="uid://db6e4fctrilsf" path="res://map.tscn" id="1_07mbj"]
+[ext_resource type="PackedScene" uid="uid://btgb3ge2g4158" path="res://random_hexes.tscn" id="2_wnl4u"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_07mbj")]
+
+[node name="RandomHexes" parent="." instance=ExtResource("2_wnl4u")]
+position = Vector2(820, 215)
