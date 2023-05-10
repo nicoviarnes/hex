@@ -15,6 +15,8 @@ func _on_area_2d_mouse_entered():
 	if not occupied:
 		glow.texture = ChoiceManager.choice
 		glow.visible = true
+	elif occupied && not ChoiceManager.choice:
+		glow.visible = true
 
 
 func _on_area_2d_mouse_exited():
