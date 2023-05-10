@@ -1,0 +1,6 @@
+res://map.tscn
+res://hex.tscn
+res://hex.gd
+res://shine.gdshader
+res://outline.gdshader
+res://map.gd

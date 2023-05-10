@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhn4pq5pmuxnq"]
+
+[ext_resource type="Texture2D" uid="uid://vnv4xusaeqnn" path="res://assets/Tiles/Terrain/Grass/grass_05.png" id="1_wgvmj"]
+[ext_resource type="Script" path="res://hex.gd" id="2_0vine"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="4_37xox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvd7s"]
+size = Vector2(116, 66.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6frc"]
+shader = ExtResource("4_37xox")
+shader_parameter/glow_amount = 0.25
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[node name="Hex" type="Sprite2D"]
+texture = ExtResource("1_wgvmj")
+script = ExtResource("2_0vine")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_dvd7s")
+
+[node name="glow" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_w6frc")
+texture = ExtResource("1_wgvmj")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
