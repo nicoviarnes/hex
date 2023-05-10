@@ -29,6 +29,9 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			self.texture = ChoiceManager.choice
 			ChoiceManager.choice = null
 			occupied = true
+		if occupied:
+			pass
+			#emit a signal that updates info labels. need to connect this signal in the spawning code
 #		for neighbor in neighbors:
 #			neighbor.get_parent().get_node("glow").visible = true
 

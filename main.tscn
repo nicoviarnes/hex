@@ -6,6 +6,32 @@
 [node name="Main" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("1_07mbj")]
+scale = Vector2(0.7, 0.7)
 
 [node name="RandomHexes" parent="." instance=ExtResource("2_wnl4u")]
-position = Vector2(820, 215)
+position = Vector2(182, 550)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 832.0
+offset_top = 1.0
+offset_right = 956.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 32
+text = "tile_info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="type" type="Label" parent="Label"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 43.0
+offset_bottom = 90.0
+text = "type: "
+
+[node name="production" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 101.0
+offset_right = 43.0
+offset_bottom = 127.0
+text = "production: "

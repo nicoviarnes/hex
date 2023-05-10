@@ -9,6 +9,7 @@ func _ready():
 	for choice in choice_count:
 		var hex = hex_choice.instantiate()
 		hex.position.x = x_offset
+		hex.position.y = 0
 		x_offset += 122
 		add_child(hex)
 		

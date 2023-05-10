@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	# Initialize variables
 	var sprite_count = 0          # Keeps track of how many sprites have been created
-	var grid_size = Vector2(6, 5) # Defines the size of the grid
+	var grid_size = Vector2(7, 6) # Defines the size of the grid
 	var sprite_offset = Vector2(122, 107) # Defines the spacing between sprites
 	var current_position = Vector2(60, 70) # Starting position of the first sprite
 	
