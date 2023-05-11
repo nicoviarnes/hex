@@ -1,11 +1,12 @@
 extends Node2D
 
 @onready var hex = preload("res://hex.tscn")
+@onready var info = get_parent().get_node("Info")
 
 func _ready():
 	# Initialize variables
 	var sprite_count = 0          # Keeps track of how many sprites have been created
-	var grid_size = Vector2(7, 6) # Defines the size of the grid
+	var grid_size = Vector2(5, 5) # Defines the size of the grid
 	var sprite_offset = Vector2(122, 107) # Defines the spacing between sprites
 	var current_position = Vector2(60, 70) # Starting position of the first sprite
 	
@@ -26,6 +27,8 @@ func _ready():
 			# Instantiate a new hex sprite and position it
 			var sprite = hex.instantiate()
 			#var hex_tile = sprite.get_node("HexTile")
+			#print(info.update_info())
+			sprite.selected.connect(info.update_info)
 			sprite.position = current_position + Vector2(x_offset, 0)
 			add_child(sprite)
 

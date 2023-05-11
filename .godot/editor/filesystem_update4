@@ -5,5 +5,6 @@ res://map.tscn
 res://choice.tscn
 res://random_hexes.tscn
 res://main.tscn
+res://hex.gd
 res://map.gd
-res://random_hexes.gd
+res://hex_info.gd

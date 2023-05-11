@@ -1,11 +1,16 @@
 extends Sprite2D
 
+signal selected(node)
+
 @onready var glow = $glow
 
 var grass = preload("res://assets/Tiles/Terrain/Grass/grass_05.png")
 var dirt = preload("res://assets/Tiles/Terrain/Dirt/dirt_06.png")
 var stone = preload("res://assets/Tiles/Terrain/Stone/stone_07.png")
 var sand = preload("res://assets/Tiles/Terrain/Sand/sand_07.png")
+
+var type : String
+var production : String
 
 var neighbors = []
 
@@ -29,8 +34,21 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			self.texture = ChoiceManager.choice
 			ChoiceManager.choice = null
 			occupied = true
+			match self.texture:
+				grass:
+					type = "grass"
+					production = "+2 food"
+				dirt:
+					type = "dirt"
+					production = "+2 something"
+				stone:
+					type = "stone"
+					production = "+2 something"
+				sand:
+					type = "sand"
+					production = "+2 something"
 		if occupied:
-			pass
+			emit_signal("selected", self)
 			#emit a signal that updates info labels. need to connect this signal in the spawning code
 #		for neighbor in neighbors:
 #			neighbor.get_parent().get_node("glow").visible = true
