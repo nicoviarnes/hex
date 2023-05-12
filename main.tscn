@@ -13,10 +13,10 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(182, 550)
 
 [node name="Info" type="Label" parent="."]
-offset_left = 832.0
-offset_top = 1.0
-offset_right = 956.0
-offset_bottom = 49.0
+offset_left = 877.0
+offset_top = 14.0
+offset_right = 1001.0
+offset_bottom = 62.0
 theme_override_font_sizes/font_size = 32
 text = "tile_info"
 horizontal_alignment = 1
@@ -37,3 +37,11 @@ offset_top = 101.0
 offset_right = 43.0
 offset_bottom = 127.0
 text = "production: "
+
+[node name="turn" type="Label" parent="Info"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 9.0
+offset_right = 283.0
+offset_bottom = 35.0
+text = "Turn: "
