@@ -1,22 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0cvr2ai2hwas"]
+[gd_scene load_steps=8 format=3 uid="uid://bhmvkqk7tf7gp"]
 
 [ext_resource type="Script" path="res://choice.gd" id="1_4mtgs"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="2_qqtu0"]
+[ext_resource type="Shader" path="res://shaders/shine.gdshader" id="2_tgk3l"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="3_5mp7n"]
 [ext_resource type="Texture2D" uid="uid://vnv4xusaeqnn" path="res://assets/Tiles/Terrain/Grass/grass_05.png" id="3_i0gei"]
-[ext_resource type="Shader" path="res://shine.gdshader" id="4_7t3o4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85mtp"]
 size = Vector2(116, 66.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bmec4"]
-shader = ExtResource("4_7t3o4")
+shader = ExtResource("2_tgk3l")
 shader_parameter/onoff = null
 shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/shine_speed = 0.0
 shader_parameter/shine_size = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2xew1"]
-shader = ExtResource("2_qqtu0")
+shader = ExtResource("3_5mp7n")
 shader_parameter/glow_amount = 0.25
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 

@@ -1,5 +1,5 @@
 turn system
-	one tile choice per turn
+	DONE: one tile choice per turn
 	resources accumulate each turn
 	build as many things as you want as long as resources are on hand
 
@@ -9,9 +9,10 @@ upgrade system
 	generic +1 upgrade option in random tiles?
 
 production bonuses
-	base 1 of everything per turn
-	adjacency bonuses for matching tile types
+	DONE: base 1 of everything per turn
+	DONE: adjacency bonuses for matching tile types
 
 leaders
 	simple leaders that have a production bonus and a win condition
 	choose a leader at the begining of the game
+

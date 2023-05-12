@@ -1,16 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhn4pq5pmuxnq"]
+[gd_scene load_steps=9 format=3 uid="uid://dc7nmfsxl5kwv"]
 
 [ext_resource type="Texture2D" uid="uid://c3ovg3hfv6r2t" path="res://assets/Tiles/Terrain/Grass/grass_18.png" id="1_1f5sa"]
 [ext_resource type="Texture2D" uid="uid://vnv4xusaeqnn" path="res://assets/Tiles/Terrain/Grass/grass_05.png" id="1_wgvmj"]
 [ext_resource type="Script" path="res://hex.gd" id="2_0vine"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="4_37xox"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="3_icn7l"]
 [ext_resource type="PackedScene" uid="uid://cuvgs387y66hx" path="res://utility/fct_manager.tscn" id="5_d5jxw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvd7s"]
 size = Vector2(116, 66.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w6frc"]
-shader = ExtResource("4_37xox")
+shader = ExtResource("3_icn7l")
 shader_parameter/glow_amount = 0.25
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 
