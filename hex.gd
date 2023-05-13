@@ -17,10 +17,10 @@ var sand = preload("res://assets/Tiles/Terrain/Sand/sand_07.png")
 
 #tile type dictionary for setting tile info
 var TILE_TYPES = {
-	grass: ["grass", 1],
-	dirt: ["dirt", 1],
-	stone: ["stone", 1],
-	sand: ["sand", 1],
+	grass: ["grass", 1, "wood"],
+	dirt: ["dirt", 1, "food"],
+	stone: ["stone", 1, "stone"],
+	sand: ["sand", 1, "gold"],
 }
 
 #terrain type of the tile
@@ -28,6 +28,7 @@ var type : String
 
 #resource produced by the tile
 var production : int
+var resourceProduced : String
 
 #array containing neihboring hex nodes
 var neighbors : Array
@@ -59,8 +60,9 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 		if TurnManager.turn == 0:
 			if ChoiceManager.choice != null:
 				set_tile()
-				#increment the turn in the TurnManager autoload script
-				TurnManager.turn += 1
+			elif occupied:
+				#signal to the label script in main scene to update the info labels
+				emit_signal("selected", self)
 		else:
 			if not occupied && ChoiceManager.choice != null:
 				#on all subsequent turns we check to make sure that the player can only place tiles adjacent to an existing tile
@@ -71,31 +73,38 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			elif occupied:
 				#signal to the label script in main scene to update the info labels
 				emit_signal("selected", self)
-				FCTManager.show_value(15)
 
 
 # set the empty tile to the selected tile values
 func set_tile():
-	self.texture = ChoiceManager.choice
-	ChoiceManager.choice = null
-	occupied = true
-	if self.texture in TILE_TYPES:
-		var tile_type = TILE_TYPES[self.texture]
-		type = tile_type[0]
-		production = tile_type[1]
-		update_self()
-		update_neighbors()
-
+	if not TurnManager.tile_placed_this_turn:
+		self.texture = ChoiceManager.choice
+		ChoiceManager.choice = null
+		occupied = true
+		if self.texture in TILE_TYPES:
+			var tile_type = TILE_TYPES[self.texture]
+			type = tile_type[0]
+			production = tile_type[1]
+			resourceProduced = tile_type[2]
+			update_self()
+			update_neighbors()
+		TurnManager.tile_placed()
 
 func update_self():
 	for neighbor in neighbors:
 		if neighbor.get_parent().type == type:
-			production += 1	
+			production += 1
+	ResourceManager.update_production(production,resourceProduced)
+
 
 func update_neighbors():
+	var added_production = 0
 	for neighbor in neighbors:
 		if neighbor.get_parent().type == type:
-			neighbor.get_parent().production += 1		
+			neighbor.get_parent().production += 1	
+			added_production += 1
+	ResourceManager.update_production(added_production, resourceProduced)
+
 
 #check to see if there are any valid neighbors nearby on the grid
 func is_tile_valid():
@@ -110,3 +119,8 @@ func _on_neigbors_area_entered(area):
 	if area.is_in_group("hex") && area.get_parent() != self && area.get_parent():
 		if not neighbors.has(area):
 			neighbors.append(area)
+			
+
+func resource_gained_popup():
+	if type.length() > 0:
+		FCTManager.show_value(production)

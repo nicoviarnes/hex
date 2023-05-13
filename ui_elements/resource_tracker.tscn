@@ -1,0 +1,169 @@
+[gd_scene load_steps=3 format=3 uid="uid://n8s7uiy733gc"]
+
+[ext_resource type="FontFile" uid="uid://qtuekc33gx5u" path="res://assets/Font/kenvector_future_thin.ttf" id="1_cqb1q"]
+[ext_resource type="Script" path="res://ui_elements/resource_tracker.gd" id="1_tqc1h"]
+
+[node name="ResourceTracker" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -566.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqc1h")
+
+[node name="spacer4" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Food" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "Food:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentFood" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="foodPerTurn" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.862745, 0, 1)
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "(+1)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stone" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "stone:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentStone" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stonePerTurn" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.862745, 0, 1)
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "(+1)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer2" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wood" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "wood:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentWood" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="woodPerTurn" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.862745, 0, 1)
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "(+1)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer3" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gold" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "gold:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentGold" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goldPerTurn" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.862745, 0, 1)
+theme_override_fonts/font = ExtResource("1_cqb1q")
+theme_override_font_sizes/font_size = 18
+text = "(+1)"
+horizontal_alignment = 1
+vertical_alignment = 1

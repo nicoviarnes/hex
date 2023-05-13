@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyncqvduph3yy"]
+[gd_scene load_steps=6 format=3 uid="uid://cyncqvduph3yy"]
 
 [ext_resource type="PackedScene" uid="uid://db6e4fctrilsf" path="res://map.tscn" id="1_07mbj"]
-[ext_resource type="PackedScene" uid="uid://btgb3ge2g4158" path="res://random_hexes.tscn" id="2_wnl4u"]
+[ext_resource type="PackedScene" uid="uid://n8s7uiy733gc" path="res://ui_elements/resource_tracker.tscn" id="1_qq8g0"]
+[ext_resource type="PackedScene" uid="uid://blteig541fori" path="res://ui_elements/tile_picker.tscn" id="3_e5cay"]
 [ext_resource type="Script" path="res://hex_info.gd" id="3_p1wmd"]
+[ext_resource type="PackedScene" uid="uid://2stkh27ubhog" path="res://ui_elements/endturn_button.tscn" id="4_5kte4"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Map" parent="." instance=ExtResource("1_07mbj")]
-scale = Vector2(0.7, 0.7)
-
-[node name="RandomHexes" parent="." instance=ExtResource("2_wnl4u")]
-position = Vector2(182, 550)
+[node name="ResourceTracker" parent="." instance=ExtResource("1_qq8g0")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Info" type="Label" parent="."]
 offset_left = 877.0
@@ -45,3 +49,29 @@ offset_top = 9.0
 offset_right = 283.0
 offset_bottom = 35.0
 text = "Turn: "
+
+[node name="TilePicker" parent="." instance=ExtResource("3_e5cay")]
+offset_left = 1186.0
+offset_top = 416.0
+offset_right = 1714.0
+offset_bottom = 624.0
+
+[node name="EndturnButton" parent="." instance=ExtResource("4_5kte4")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 834.0
+offset_top = 532.0
+offset_right = 1024.0
+offset_bottom = 581.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Map" parent="." instance=ExtResource("1_07mbj")]
+position = Vector2(104, 129)
+scale = Vector2(0.7, 0.7)
+
+[connection signal="makeNewHand" from="TilePicker" to="EndturnButton" method="_on_tile_picker_make_new_hand"]
+[connection signal="pressed" from="EndturnButton" to="TilePicker" method="_on_endturn_button_pressed"]
+[connection signal="updateTurn" from="EndturnButton" to="Info" method="_on_endturn_button_update_turn"]

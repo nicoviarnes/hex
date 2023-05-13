@@ -1,5 +1,8 @@
-Node2D
 Label
+ColorRect
+HBoxContainer
+TextureButton
+Node2D
 CanvasLayer
 Sprite2D
 CollisionShape2D

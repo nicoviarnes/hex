@@ -29,6 +29,7 @@ func _ready():
 			#var hex_tile = sprite.get_node("HexTile")
 			#print(info.update_info())
 			sprite.selected.connect(info.update_info)
+			TurnManager.turnEnded.connect(sprite.resource_gained_popup)
 			sprite.position = current_position + Vector2(x_offset, 0)
 			add_child(sprite)
 

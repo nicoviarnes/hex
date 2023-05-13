@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://blteig541fori"]
+
+[ext_resource type="Script" path="res://ui_elements/tile_picker.gd" id="1_5qbvq"]
+[ext_resource type="FontFile" uid="uid://qtuekc33gx5u" path="res://assets/Font/kenvector_future_thin.ttf" id="1_7ibka"]
+[ext_resource type="PackedScene" uid="uid://btgb3ge2g4158" path="res://random_hexes.tscn" id="2_rgg5g"]
+
+[node name="TilePicker" type="ColorRect"]
+offset_left = 334.0
+offset_top = 257.0
+offset_right = 862.0
+offset_bottom = 465.0
+mouse_filter = 2
+color = Color(0.219608, 0.482353, 1, 1)
+script = ExtResource("1_5qbvq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = -35.0
+offset_right = 138.0
+offset_bottom = 9.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_7ibka")
+theme_override_font_sizes/font_size = 36
+text = "Choose a Tile"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RandomHexes" parent="." instance=ExtResource("2_rgg5g")]
+position = Vector2(133, 109)
+
+[connection signal="makeNewHand" from="." to="RandomHexes" method="_on_tile_picker_make_new_hand"]

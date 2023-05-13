@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ChoiceManager="*res://autoloads/ChoiceManager.gd"
 TurnManager="*res://autoloads/TurnManager.gd"
+ResourceManager="*res://autoloads/ResourceManager.gd"
 
 [display]
 
