@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyncqvduph3yy"]
+[gd_scene load_steps=7 format=3 uid="uid://cyncqvduph3yy"]
 
 [ext_resource type="PackedScene" uid="uid://db6e4fctrilsf" path="res://map.tscn" id="1_07mbj"]
 [ext_resource type="PackedScene" uid="uid://n8s7uiy733gc" path="res://ui_elements/resource_tracker.tscn" id="1_qq8g0"]
 [ext_resource type="PackedScene" uid="uid://blteig541fori" path="res://ui_elements/tile_picker.tscn" id="3_e5cay"]
 [ext_resource type="Script" path="res://hex_info.gd" id="3_p1wmd"]
 [ext_resource type="PackedScene" uid="uid://2stkh27ubhog" path="res://ui_elements/endturn_button.tscn" id="4_5kte4"]
+[ext_resource type="PackedScene" uid="uid://38m5jwqof3o1" path="res://ui_elements/water.tscn" id="6_vcpmd"]
 
 [node name="Main" type="Node2D"]
+
+[node name="water" parent="." instance=ExtResource("6_vcpmd")]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 845.0
+offset_bottom = 645.0
+mouse_filter = 2
 
 [node name="ResourceTracker" parent="." instance=ExtResource("1_qq8g0")]
 anchors_preset = 0

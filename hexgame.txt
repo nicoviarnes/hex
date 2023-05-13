@@ -1,6 +1,6 @@
 turn system
 	DONE: one tile choice per turn
-	resources accumulate each turn
+	DONE: resources accumulate each turn
 	build as many things as you want as long as resources are on hand
 
 upgrade system

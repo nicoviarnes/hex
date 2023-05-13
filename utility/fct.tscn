@@ -7,8 +7,12 @@
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.14902, 0.698039, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("1_fh5gf")
 theme_override_font_sizes/font_size = 26
 text = "FCT"
