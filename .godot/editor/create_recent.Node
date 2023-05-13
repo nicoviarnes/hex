@@ -1,5 +1,15 @@
+TextureRect
 ColorRect
 Sprite2D
+ParallaxLayer
+ParallaxBackground
+DirectionalLight3D
+Camera3D
+SubViewportContainer
+SubViewport
+MeshInstance3D
+Node3D
+WorldEnvironment
 Label
 HBoxContainer
 TextureButton
@@ -7,4 +17,3 @@ Node2D
 CanvasLayer
 CollisionShape2D
 Area2D
-TextureRect

@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://blteig541fori"]
+[gd_scene load_steps=5 format=3 uid="uid://blteig541fori"]
 
 [ext_resource type="Script" path="res://ui_elements/tile_picker.gd" id="1_5qbvq"]
 [ext_resource type="FontFile" uid="uid://qtuekc33gx5u" path="res://assets/Font/kenvector_future_thin.ttf" id="1_7ibka"]
+[ext_resource type="Texture2D" uid="uid://c2tc5pmuko6id" path="res://assets/kenneyui/panelInset_beige.png" id="1_25uuy"]
 [ext_resource type="PackedScene" uid="uid://btgb3ge2g4158" path="res://random_hexes.tscn" id="2_rgg5g"]
 
-[node name="TilePicker" type="ColorRect"]
+[node name="TilePicker" type="TextureRect"]
 offset_left = 334.0
 offset_top = 257.0
 offset_right = 862.0
 offset_bottom = 465.0
 mouse_filter = 2
-color = Color(0.219608, 0.482353, 1, 1)
+texture = ExtResource("1_25uuy")
 script = ExtResource("1_5qbvq")
 
 [node name="Label" type="Label" parent="."]

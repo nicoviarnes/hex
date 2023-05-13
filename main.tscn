@@ -1,34 +1,54 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyncqvduph3yy"]
+[gd_scene load_steps=10 format=3 uid="uid://cyncqvduph3yy"]
 
+[ext_resource type="Texture2D" uid="uid://cfpcrw1hp3x8h" path="res://assets/kenneyui/buttonLong_brown.png" id="1_6oayt"]
 [ext_resource type="PackedScene" uid="uid://db6e4fctrilsf" path="res://map.tscn" id="1_07mbj"]
+[ext_resource type="PackedScene" uid="uid://db88m0g0v7dep" path="res://utility/parallax_background.tscn" id="1_ajygi"]
 [ext_resource type="PackedScene" uid="uid://n8s7uiy733gc" path="res://ui_elements/resource_tracker.tscn" id="1_qq8g0"]
 [ext_resource type="PackedScene" uid="uid://blteig541fori" path="res://ui_elements/tile_picker.tscn" id="3_e5cay"]
 [ext_resource type="Script" path="res://hex_info.gd" id="3_p1wmd"]
 [ext_resource type="PackedScene" uid="uid://2stkh27ubhog" path="res://ui_elements/endturn_button.tscn" id="4_5kte4"]
-[ext_resource type="PackedScene" uid="uid://38m5jwqof3o1" path="res://ui_elements/water.tscn" id="6_vcpmd"]
+[ext_resource type="Texture2D" uid="uid://c2tc5pmuko6id" path="res://assets/kenneyui/panelInset_beige.png" id="4_q3fv6"]
+[ext_resource type="Texture2D" uid="uid://bc1sysbfqjl1" path="res://assets/kenneyui/panel_blue.png" id="8_1h5j0"]
 
 [node name="Main" type="Node2D"]
 
-[node name="water" parent="." instance=ExtResource("6_vcpmd")]
-offset_left = 7.0
-offset_top = 7.0
-offset_right = 845.0
-offset_bottom = 645.0
-mouse_filter = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -12.0
+offset_right = 1167.0
+offset_bottom = 49.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+texture = ExtResource("1_6oayt")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_ajygi")]
 
 [node name="ResourceTracker" parent="." instance=ExtResource("1_qq8g0")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_bottom = 0.0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 1127.0
+offset_bottom = 39.0
 grow_horizontal = 1
 grow_vertical = 1
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 605.0
+offset_top = 119.0
+offset_right = 970.0
+offset_bottom = 346.0
+texture = ExtResource("4_q3fv6")
 
 [node name="Info" type="Label" parent="."]
-offset_left = 877.0
-offset_top = 14.0
-offset_right = 1001.0
-offset_bottom = 62.0
+offset_left = 697.0
+offset_top = 148.0
+offset_right = 821.0
+offset_bottom = 196.0
 theme_override_font_sizes/font_size = 32
 text = "tile_info"
 horizontal_alignment = 1
@@ -75,6 +95,13 @@ offset_right = 1024.0
 offset_bottom = 581.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 85.0
+offset_top = 109.0
+offset_right = 598.0
+offset_bottom = 548.0
+texture = ExtResource("8_1h5j0")
 
 [node name="Map" parent="." instance=ExtResource("1_07mbj")]
 position = Vector2(104, 129)
