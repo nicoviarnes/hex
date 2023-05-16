@@ -9,11 +9,11 @@ func _ready():
 
 func show_hand():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(592, 416), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "position", Vector2(620, 439), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 
 func hide_hand():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(1186, 416), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "position", Vector2(1194, 439), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	
 	tween.tween_callback(make_new_hand)
 

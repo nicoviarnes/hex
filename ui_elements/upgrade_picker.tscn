@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfmp6smnoek7a"]
+
+[ext_resource type="Texture2D" uid="uid://bdnpnhseg6s8l" path="res://assets/kenneyui/panel_beige.png" id="1_aax7j"]
+[ext_resource type="FontFile" uid="uid://qtuekc33gx5u" path="res://assets/Font/kenvector_future_thin.ttf" id="2_crdhv"]
+[ext_resource type="Script" path="res://ui_elements/upgrade_picker.gd" id="2_o4gv6"]
+[ext_resource type="Texture2D" uid="uid://pxhi5xo6him4" path="res://assets/kenneyui/buttonSquare_blue.png" id="4_ip38i"]
+[ext_resource type="Texture2D" uid="uid://ddftx3v1mboom" path="res://assets/kenneyui/buttonSquare_blue_pressed.png" id="5_6gwaq"]
+
+[node name="UpgradePicker" type="TextureRect"]
+offset_right = 528.0
+offset_bottom = 208.0
+mouse_filter = 2
+texture = ExtResource("1_aax7j")
+script = ExtResource("2_o4gv6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = -35.0
+offset_right = 138.0
+offset_bottom = 9.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_crdhv")
+theme_override_font_sizes/font_size = 36
+text = "upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Backbutton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = -33.0
+offset_right = -8.0
+offset_bottom = 16.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_ip38i")
+texture_pressed = ExtResource("5_6gwaq")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Backbutton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 56.0
+offset_bottom = 41.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_crdhv")
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Backbutton" to="." method="_on_backbutton_pressed"]

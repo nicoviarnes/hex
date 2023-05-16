@@ -33,6 +33,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RandomHexes" parent="." instance=ExtResource("2_rgg5g")]
-position = Vector2(133, 109)
+position = Vector2(145, 91)
 
 [connection signal="makeNewHand" from="." to="RandomHexes" method="_on_tile_picker_make_new_hand"]

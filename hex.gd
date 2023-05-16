@@ -14,13 +14,31 @@ var grass = preload("res://assets/Tiles/Terrain/Grass/grass_05.png")
 var dirt = preload("res://assets/Tiles/Terrain/Dirt/dirt_06.png")
 var stone = preload("res://assets/Tiles/Terrain/Stone/stone_07.png")
 var sand = preload("res://assets/Tiles/Terrain/Sand/sand_07.png")
+var sand_market = preload("res://assets/Tiles/Western/western_sheriff.png")
+var sand_stone = preload("res://assets/Tiles/Terrain/Sand/sand_18.png")
+var sand_tree = preload("res://assets/Tiles/Terrain/Sand/sand_14.png")
 
 #tile type dictionary for setting tile info
 var TILE_TYPES = {
-	grass: ["grass", 1, "wood"],
-	dirt: ["dirt", 1, "food"],
-	stone: ["stone", 1, "stone"],
-	sand: ["sand", 1, "gold"],
+	grass: ["grass", 1, "food", []],
+	#grass tree upgrade 2 variety
+		#grass lumber mill
+	#grass stone upgrade 2 variety
+	#grass farm
+	#grass windmill 1 x limit
+	dirt: ["dirt", 1, "wood", []],
+	#dirt tree upgrade 2 variety
+	#dirt stone upgrade 2 variety
+		#dirt mine
+	stone: ["stone", 1, "stone", []],
+	#stone tree upgrade 2 variety
+	#stone market 1 x limit
+	sand: ["sand", 1, "gold", [sand_tree, sand_stone, sand_market]],
+	#sand tree upgrade 2 variety
+	#sand stone upgrade 2 variety
+	sand_tree: ["sand_tree", 5, "wood", []],
+	sand_stone: ["sand_stone", 5, "stone", []],
+	sand_market: ["sand_market", 25, "gold", []],
 }
 
 #terrain type of the tile
@@ -29,6 +47,8 @@ var type : String
 #resource produced by the tile
 var production : int
 var resourceProduced : String
+
+var upgrades : Array
 
 #array containing neihboring hex nodes
 var neighbors : Array
@@ -86,6 +106,7 @@ func set_tile():
 			type = tile_type[0]
 			production = tile_type[1]
 			resourceProduced = tile_type[2]
+			upgrades = tile_type[3]
 			update_self()
 			update_neighbors()
 		TurnManager.tile_placed()

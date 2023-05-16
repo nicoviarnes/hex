@@ -1,4 +1,7 @@
 extends Sprite2D
+
+signal updateInfo(node)
+
 @onready var glow = $glow
 @onready var shine = $shine
 

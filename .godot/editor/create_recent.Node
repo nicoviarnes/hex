@@ -1,3 +1,5 @@
+Label
+TextureButton
 TextureRect
 ColorRect
 Sprite2D
@@ -10,9 +12,7 @@ SubViewport
 MeshInstance3D
 Node3D
 WorldEnvironment
-Label
 HBoxContainer
-TextureButton
 Node2D
 CanvasLayer
 CollisionShape2D

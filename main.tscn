@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyncqvduph3yy"]
+[gd_scene load_steps=11 format=3 uid="uid://cyncqvduph3yy"]
 
 [ext_resource type="Texture2D" uid="uid://cfpcrw1hp3x8h" path="res://assets/kenneyui/buttonLong_brown.png" id="1_6oayt"]
 [ext_resource type="PackedScene" uid="uid://db6e4fctrilsf" path="res://map.tscn" id="1_07mbj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://hex_info.gd" id="3_p1wmd"]
 [ext_resource type="PackedScene" uid="uid://2stkh27ubhog" path="res://ui_elements/endturn_button.tscn" id="4_5kte4"]
 [ext_resource type="Texture2D" uid="uid://c2tc5pmuko6id" path="res://assets/kenneyui/panelInset_beige.png" id="4_q3fv6"]
+[ext_resource type="PackedScene" uid="uid://dfmp6smnoek7a" path="res://ui_elements/upgrade_picker.tscn" id="7_q7qxa"]
 [ext_resource type="Texture2D" uid="uid://bc1sysbfqjl1" path="res://assets/kenneyui/panel_blue.png" id="8_1h5j0"]
 
 [node name="Main" type="Node2D"]
@@ -38,17 +39,17 @@ grow_vertical = 1
 alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 605.0
-offset_top = 119.0
-offset_right = 970.0
-offset_bottom = 346.0
+offset_left = 734.0
+offset_top = 54.0
+offset_right = 1143.0
+offset_bottom = 199.0
 texture = ExtResource("4_q3fv6")
 
 [node name="Info" type="Label" parent="."]
-offset_left = 697.0
-offset_top = 148.0
-offset_right = 821.0
-offset_bottom = 196.0
+offset_left = 801.0
+offset_top = 64.0
+offset_right = 925.0
+offset_bottom = 112.0
 theme_override_font_sizes/font_size = 32
 text = "tile_info"
 horizontal_alignment = 1
@@ -79,10 +80,16 @@ offset_bottom = 35.0
 text = "Turn: "
 
 [node name="TilePicker" parent="." instance=ExtResource("3_e5cay")]
-offset_left = 1186.0
-offset_top = 416.0
-offset_right = 1714.0
-offset_bottom = 624.0
+offset_left = 1194.0
+offset_top = 439.0
+offset_right = 1729.0
+offset_bottom = 612.0
+
+[node name="UpgradePicker" parent="." instance=ExtResource("7_q7qxa")]
+offset_left = 1194.0
+offset_top = 236.0
+offset_right = 1729.0
+offset_bottom = 409.0
 
 [node name="EndturnButton" parent="." instance=ExtResource("4_5kte4")]
 visible = false
@@ -108,5 +115,7 @@ position = Vector2(104, 129)
 scale = Vector2(0.7, 0.7)
 
 [connection signal="makeNewHand" from="TilePicker" to="EndturnButton" method="_on_tile_picker_make_new_hand"]
+[connection signal="hideUpgrades" from="UpgradePicker" to="EndturnButton" method="_on_upgrade_picker_hide_upgrades"]
+[connection signal="showUpgrades" from="UpgradePicker" to="EndturnButton" method="_on_upgrade_picker_show_upgrades"]
 [connection signal="pressed" from="EndturnButton" to="TilePicker" method="_on_endturn_button_pressed"]
 [connection signal="updateTurn" from="EndturnButton" to="Info" method="_on_endturn_button_update_turn"]
